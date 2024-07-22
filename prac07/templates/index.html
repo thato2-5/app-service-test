@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--    Todo bar    -->
+<form action="/task" method="post">
+    <div class="input-group mb-3">
+        <input type="text" name="content" class="form-control" placeholder="What do you want to do today?">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-secondary">Add Task</button>
+        </div>
+    </div>
+</form>
+
+<!--    Main table  -->
+<table class="table-hover">
+    {% for task in tasks %}
+    <tr>
+        <td>
+            <input type="checkbox" name="content" id="{{ task.id }}" {% if task.done %} checked {% endif %}>
+        </td>
+        <td class="content task">
+            <label for="{{ task.id }}" class="{% if task.done %} done {% endif %}">{{ task.content }}</label>
+        </td>
+        <td align="right">
+            <span><a data-bs-toggle="modal" class="edit" href="#edit_modal{{ task.id }}" data-bs-target="#myModal">Edit</a></span>
+        </td>
+        <td align="right">
+            <span><a href="/delete/{{ task.id }}"><button type="button" class="btn btn-primary">X</button></a></span>
+        </td>
+        <!--    Edit Modal  -->
+        <form action="/edit" method="post">
+            <div class="modal fade" id="myModal edit_modal_{{task.id}}" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Task</h5>
+                            <input name="task_id" type="hidden" value="{{task.id}}">
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group input-group-sm mb-3">
+                                <input type="text" name="edit_text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ task.content }}">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="Ok" class="btn btn-primary">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+<!--    Footer  -->
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <p><span id="count">{{ (tasks|length) - (tasks|sum(attribute='done')) }}</span> items left</p>
+            </td>
+            <td class="complete"><a href="/finished">Mark all as completed</a></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    $(function(){
+        alert('Page ready');
+    });
+</script>
+{% endblock %}
