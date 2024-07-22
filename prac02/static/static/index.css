@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+.controls {
+    margin-top: 20px;
+}
+.controls button {
+    margin: 5px;
+}
