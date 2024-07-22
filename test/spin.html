@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <script src="../prac01/static/jquery-3.7.1.min.js"></script>
+    <style>
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 10px solid #333;
+            border-top: 10px solid #fff;
+            border-radius: 50%;
+            animation: spins 2s linear infinite;
+        }
+
+        .loader-inner {
+            position: absolute;
+            top: 5px; /* Offset for the border */
+            left: 5px; /* Offset for the border */
+            width: 80px; /* 100px (loader size) - 2 * 10px (border) */
+            height: 80px; /* 100px (loader size) - 2 * 10px (border) */
+            border: 10px solid #333;
+            border-top: 10px solid #fff;
+            border-radius: 50%;
+            animation: spins 2s linear infinite;
+        }
+
+        .loader-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        @keyframes spins {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-circle"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.loading-screen').fadeIn(1000);
+            setTimeout(function() {
+                $('.loading-screen').fadeOut(1000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
