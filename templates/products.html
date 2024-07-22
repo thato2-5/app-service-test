@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Products
+{% endblock %}
+
+{% block style %}
+    {{ super() }}
+    <style>
+        .product-device {
+            position: absolute;
+            right: 10%;
+            bottom: -30%;
+            width: 300px;
+            height: 540px;
+            background-color: #333;
+            border-radius: 21px;
+            transform: rotate(30deg);
+        }
+        .product-device::before {
+            position: absolute;
+            top: 10%;
+            right: 10px;
+            bottom: 10%;
+            left: 10px;
+            content: "";
+            background-color: rgba(255, 255, 255, .1);
+            border-radius: 5px;
+        }
+        .product-device-2 {
+            top: -25%;
+            right: auto;
+            bottom: 0;
+            left: 3%;
+            background-color: #e5e5e5;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand d-md-none" href="#">
+                <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#yinYang"/></svg>
+                Hackerbox
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="#offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="#offcanvas" aria-labelledby="#offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="#offcanvasLabel">Hackerbox</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="#">
+                            <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#yinYang"/></svg>
+                        </a></li>
+                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Enterprise</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Support</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">
+                            <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#cart"/></svg>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+            <div class="col-md-6 p-lg-5 mx-auto my-5">
+                <h1 class="display-3 fw-bold">Designed for ethical hackers</h1>
+                <h3 class="fw-normal text-muted mb-3">Start your hacking journey today. Explore with hackerbox</h3>
+                <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                    <a href="#" class="icon-link">
+                        Learn more
+                        <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#chevron-right"/></svg>
+                    </a>
+                    <a href="#" class="icon-link">
+                        Buy
+                        <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#chevron-right"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheading.</p>
+                </div>
+                <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    <img src="../static/assets/images/profile1.png" alt="" width="195" height="195">
+                </div>
+            </div>
+            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheading.</p>
+                </div>
+                <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    <img src="../static/assets/images/profile1.png" alt="" width="195" height="195">
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheading.</p>
+                </div>
+                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    <img src="../static/assets/images/profile1.png" alt="" width="195" height="195">
+                </div>
+            </div>
+            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheading.</p>
+                </div>
+                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    <img src="../static/assets/images/profile1.png" alt="" width="195" height="195">
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheadline.</p>
+                </div>
+                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    <img src="../static/assets/images/profile1.png" alt="" width="195" height="195">
+                </div>
+            </div>
+            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheading.</p>
+                </div>
+                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                    <img src="../static/assets/images/profile1.png" alt="" width="195" height="195">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col">
+                <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#yinYang"/></svg>
+                <small class="d-block mb-3 text-body-secondary">&copy; 2024</small>
+            </div>
+            <div class="col">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="#" class="link-secondary text-decoration-none">Cool stuff</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Random feature</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Team feature</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Stuff for developers</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Another one</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="#" class="link-secondary text-decoration-none">Business</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Education</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Government</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="#" class="link-secondary text-decoration-none">Resource name</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Resource</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Another resource</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="#" class="link-secondary text-decoration-none">Team</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Locations</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Privacy</a></li>
+                    <li><a href="#" class="link-secondary text-decoration-none">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

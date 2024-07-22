@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Login!
+{% endblock  %}
+
+{% block content %}
+    {{ super() }}
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <strong>{{ message }}</strong>
+                </div>
+            {% endfor %}
+            <div class="form-login w-100 m-auto">
+                <form action="/login/" method="post">
+                    <fieldset>
+                        <svg class="bi pe-none me-2" width="36" height="36"><use xlink:href="#yinYang"/></svg>
+                        <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+                        {{form.csrf_token}}
+                        {% if form.username.errors %}
+                            {% for error in form.username.errors %}
+                                <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    <strong>{{ error }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <p>{{ form.username.label(class = "form-control-label") }}</p>
+                        <p>{{ form.username(class = "form-control") }}</p>
+                        {% if form.password.errors %}
+                            {% for error in form.password.errors %}
+                                <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    <strong>{{ error }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <p>{{ form.password.label(class = "form-control-label") }}</p>
+                        <p>{{ form.password(class = "form-control") }}</p>
+                        <p>{{ form.submit(class = "btn btn-primary") }}</p>
+                    </fieldset>
+                </form>
+            </div>
+            <p>Click <a href="/signup/">here</a> to signup!</p>
+        </div>
+        <div class="col"></div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+     {{ super() }} 
+{% endblock %}

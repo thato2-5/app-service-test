@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block style %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom"><a href="/" class="btn-light" data-bs-toggle="tooltip" title="Back"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#arrow-left-circle"/></svg></a> Settings!</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded-3">
+                    <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#toggles-2"/></svg>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Toggle Background</h3>
+                    <p>Change the theme by clicking the button below.</p>
+                    <div class="dropdown mb-3 me-3 bd-mode-toggle">
+                        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+                                id="bd-theme"
+                                type="button"
+                                aria-expanded="false"
+                                data-bs-toggle="dropdown"
+                                aria-label="Toggle theme (auto)">
+                          <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                          <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                              Light
+                              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                              Dark
+                              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                              Auto
+                              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                            </button>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 rounded-3">
+                    <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#cpu-fill"/></svg>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Benchmark Test</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probabaly just keep going until we run out of words.</p>
+                    <a href="#" class="btn btn-primary">
+                        Primary button
+                    </a>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded-3">
+                    <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#tools"/></svg>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <a href="#" class="btn btn-primary">
+                        Primary button
+                    </a>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded-3">
+                    <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#people-fill"/></svg>
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <a href="#" class="btn btn-primary">
+                        Primary button
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

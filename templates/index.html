@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <style>
+        .carousel-inner {
+            border-radius: 10px;
+            max-height: 500px;
+        } 
+        /* .carousel-item {
+            text-align: center;
+        } */
+        /*.carousel {
+            width: 80%; 
+            margin: auto; 
+        } */
+        /* .carousel-caption {
+            background: rgba(0, 0, 0, 0.273);
+            border-radius: 5px;
+            color: #fff;
+        } */
+        /* CUSTOMIZE THE CAROUSEL
+        ------------------------------------*/
+
+        /* Carousel base class */
+        .carousel {
+            margin-bottom: 4rem;
+        }
+        /* Since positioning the image, we need to help out the caption*/
+        .carousel-caption{
+            bottom: 3rem;
+            z-index: 10;
+        }
+        /* Declare heights because of positioning of img element */
+        .carousel-item {
+            height: 32rem;
+        }
+        
+    </style>
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Home Page!
+{% endblock %}
+
+{% block style %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="container mt-3">
+        <div class="carousel slide mb-6" id="demo" data-bs-ride="carousel" style="background-image: url(../static/assets/images/profile2.jpeg); background-size:cover; background-repeat:no-repeat">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Hackerbox Playground</h1>
+                            <p class="opacity-75">The Ulitimate framework for your Cyber Security operations!</p>
+                            <p><a href="/signup/" class="btn btn-lg btn-primary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#personAdd"/></svg> Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Hacking tools at your fingertips</h1>
+                            <p>You can install your favorite tools on top of any Linux system, but it is time-consuming, prone to errors and hard to keep updated over time. Hakerbox gives you the convenience of a familiar Debian environment with all the tools you will ever need.</p>
+                            <p><a href="#" class="btn btn-lg btn-primary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#info-circle"/></svg> Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>Tools for every operations.</h1>
+                            <p>Hackerbox provides a huge arsenal of tools, utilities and libraries that security professionals can use to test and assess the security of their assets in a reliable, compliant and reproducible way.</p>
+                            <p><a href="#" class="btn btn-lg btn-primary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#globe"/></svg> Documentation.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button type="button" class="carousel-control-prev" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button type="button" class="carousel-control-next" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container mt-3 row">
+        <div class="col">
+            <div class="d-flex flex-nowrap">
+                <h1 class="visually-hidden">Sidebars examples</h1>
+                <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#yinYang"/></svg>
+                        <span class="fs-4">Hackerbox!</span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white link-body-emphasis" aria-current="page">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#home"/></svg>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white link-body-emphasis" aria-current="page" href="/dashboard/">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#speedometer2"/></svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white link-body-emphasis" aria-current="page">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#table"/></svg>
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/products/" class="nav-link text-white link-body-emphasis" aria-current="page">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#grid"/></svg>
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white link-body-emphasis">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#people-circle"/></svg>
+                                Customers
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle link-body-emphasis" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg class="bi pe-none me-2 px-2" width="36" height="36"><use xlink:href="#wrench"/></svg>
+                            <strong>More</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small">
+                            <li><a href="#" class="dropdown-item"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#clipboard-plus"/></svg> New project...</a></li>
+                            <li><a href="/settings/" class="dropdown-item"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#tools"/></svg> Settings</a></li>
+                            <li><a href="#" class="dropdown-item"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#file-person"/></svg> Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="/login/" class="dropdown-item"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#people-fill"></svg> Sign In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-2 border-bottom">Promotions</h2>
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 " style="background-image: url(../static/assets/images/profile3.jpeg);">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white ">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Metasploit Console</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                               <a href="#" class="btn-light"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#arrow-right-circle"/></svg></a>
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#eyeglasses"/></svg>
+                                <small>Claim</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#calendar3"/></svg>
+                                <small>3d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mb-5">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Company, Inc</p>
+            <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#yinYang"/></svg></a>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#twitter-x"/></svg></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#youtube"/></svg></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#facebook"/></svg></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#instagram"/></svg></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#github"/></svg></a></li>
+            </ul>
+        </footer>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

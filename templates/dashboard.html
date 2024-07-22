@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block style %}
+    {{ super() }}
+    <style>
+        /* Sidebar */
+        @media (min-width: 768px) {
+            .sidebar .offcanvas-lg {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 48px;
+            }
+            .navbar-search {
+                display: block;
+            }
+        }
+        .sidebar .nav-link {
+            font-size: .875rem;
+            font-weight: 500;
+        }
+        .navbar-brand {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            background-color: rgba(0, 0, 0, .25);
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+        }
+        .navbar .form-control {
+            padding: .75rem 1rem;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+        <a href="#" class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white">Hackerbox</a>
+        <ul class="navbar-nav flex-row d-md-none">
+            <li class="nav-item text-nowrap">
+                <button type="button" class="nav-link px-3 text-white" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+                    <svg class="bi pe-none me-2"><use xlink:href="#search"/></svg>
+                </button>
+            </li>
+            <li class="nav-item text-nowrap">
+                <button type="button" class="nav-link px-3 text-white" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg class="bi pe-none me-2"><use xlink:href="#list"/></svg>
+                </button>
+            </li>
+        </ul>
+        <div class="navbar-search w-100 collapse" id="navbarSearch">
+            <input type="text" class="form-control w-100 rounded-0 border-0" placeholder="Search" aria-label="Search">
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+                <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="sidebarMenuLabel">Hackerbox</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link d-flex align-items-center gap-2 active" aria-current="page">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#house-fill"/></svg>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#file-earmark"/></svg>
+                                    Orders
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#cart"/></svg>
+                                    Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#people"/></svg>
+                                    Customers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#graph-up"/></svg>
+                                    Reports
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#puzzle"/></svg>
+                                    Integrations
+                                </a>
+                            </li>
+                        </ul>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+                            <span>Saved reports</span>
+                            <a href="#" class="link-secondary" aria-label="Add a new report">
+                                <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#plus-circle"/></svg>
+                            </a>
+                        </h6>
+                        <ul class="nav flex-column mb-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#file-earmark-text"/></svg>
+                                    Current month
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#file-earmark-text"/></svg>
+                                    Last quarter
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#file-earmark-text"/></svg>
+                                    Social engagement
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#file-earmark-text"/></svg>
+                                    Year-end sale
+                                </a>
+                            </li>
+                        </ul>
+                        <hr class="my-3">
+                        <ul class="nav flex-column mb-auto">
+                            <li class="nav-item">
+                                <a href="/settings/" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#gear-wide-connected"/></svg>
+                                    Settings
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link d-flex align-items-center gap-2">
+                                    <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#door-closed"/></svg>
+                                    Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1" data-bs-toggle="dropdown">
+                            <svg class="bi pe-none me-2" width="20" height="20"><use xlink:href="#calendar3"/></svg>
+                            This week
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+        <div class="dropdown-menu d-block position-static p-2 mx-0 shadow rounded-3 w-240px" data-bs-theme="light">
+            <div class="d-grid gap-1">
+                <div class="cal">
+                    <div class="cal-month">
+                        <button type="button" class="btn cal-btn">
+                            <img src="../static/assets/dist/icons/arrow-left-short.svg" alt="" width="16" height="16">
+                        </button>
+                        <strong class="cal-month-name">January</strong>
+                        <select class="form-select cal-month-name d-none">
+                            <option selected value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December"></option>
+                        </select>
+                        <button type="button" class="btn cal-btn">
+                            <img src="../static/assets/dist/icons/arrow-right-short.svg" alt="" width="16" height="16">
+                        </button>
+                    </div>
+                    <div class="cal-weekdays text-body-secondary">
+                        <div class="cal-weekday">Sun</div>
+                        <div class="cal-weekday">Mon</div>
+                        <div class="cal-weekday">Tue</div>
+                        <div class="cal-weekday">Wed</div>
+                        <div class="cal-weekday">Thu</div>
+                        <div class="cal-weekday">Fri</div>
+                        <div class="cal-weekday">Sat</div>
+                    </div>
+                    <div class="cal-days">
+                        <button disabled type="button" class="btn cal-btn">30</button>
+                        <button disabled type="button" class="btn cal-btn">31</button>
+
+                        <button type="button" class="btn cal-btn">1</button>
+                        <button type="button" class="btn cal-btn">2</button>
+                        <button type="button" class="btn cal-btn">3</button>
+                        <button type="button" class="btn cal-btn">4</button>
+                        <button type="button" class="btn cal-btn">5</button>
+                        <button type="button" class="btn cal-btn">6</button>
+                        <button type="button" class="btn cal-btn">7</button>
+
+                        <button type="button" class="btn cal-btn">8</button>
+                        <button type="button" class="btn cal-btn">9</button>
+                        <button type="button" class="btn cal-btn">10</button>
+                        <button type="button" class="btn cal-btn">11</button>
+                        <button type="button" class="btn cal-btn">12</button>
+                        <button type="button" class="btn cal-btn">13</button>
+                        <button type="button" class="btn cal-btn">14</button>
+
+                        <button type="button" class="btn cal-btn">15</button>
+                        <button type="button" class="btn cal-btn">16</button>
+                        <button type="button" class="btn cal-btn">17</button>
+                        <button type="button" class="btn cal-btn">18</button>
+                        <button type="button" class="btn cal-btn">19</button>
+                        <button type="button" class="btn cal-btn">20</button>
+                        <button type="button" class="btn cal-btn">21</button>
+
+                        <button type="button" class="btn cal-btn">22</button>
+                        <button type="button" class="btn cal-btn">23</button>
+                        <button type="button" class="btn cal-btn">24</button>
+                        <button type="button" class="btn cal-btn">25</button>
+                        <button type="button" class="btn cal-btn">26</button>
+                        <button type="button" class="btn cal-btn">27</button>
+                        <button type="button" class="btn cal-btn">28</button>
+
+                        <button type="button" class="btn cal-btn">29</button>
+                        <button type="button" class="btn cal-btn">30</button>
+                        <button type="button" class="btn cal-btn">31</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

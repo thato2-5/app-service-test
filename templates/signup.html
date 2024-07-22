@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Signup!
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            {{ super() }}
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <strong>{{message}}</strong>
+                </div>
+            {% endfor %}
+            <div class="form-signup w-100 m-auto">
+                <form action="/signup/" method="post">
+                    <fieldset>
+                        <svg class="bi pe-none me-2" width="36" height="36"><use xlink:href="#yinYang"/></svg>
+                        <h1 class="h3 mb-3 fw-normal">Sign up for free</h1>
+                        {{form.csrf_token}}
+                        <div class="form-floating">
+                            {% if form.username.errors %}
+                                {% for error in form.username.errors %}
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        <strong>{{ error }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <p>{{form.username.label(class = "form-control-label")}}</p>
+                            <p>{{form.username(class = "form-control")}}</p>
+                        </div>
+                        <div class="form-floating">
+                            {% if form.email.errors %}
+                                    {% for error in form.email.errors %}
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <strong>{{ error }}</strong>
+                                        </div>
+                                    {% endfor %}
+                            {% endif %}
+                            <p>{{form.email.label(class = "form-control-label")}}</p>
+                            <p>{{form.email(class = "form-control")}}</p>
+                        </div>
+                        <div class="form-floating">
+                            {% if form.email1.errors %}
+                                    {% for error in form.email1.errors %}
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <strong>{{ error }}</strong>
+                                        </div>
+                                    {% endfor %}
+                            {% endif %}
+                            <p>{{form.email1.label(class = "form-control-label")}}</p>
+                            <p>{{form.email1(class = "form-control")}}</p>
+                        </div>
+                        <div class="form-floating">
+                            {% if form.password.errors %}
+                                    {% for error in form.password.errors %}
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <strong>{{ error }}</strong>
+                                        </div>
+                                    {% endfor %}
+                            {% endif %}
+                            <p>{{form.password.label(class = "form-control-label")}}</p>
+                            <p>{{form.password(class = "form-control")}}</p>
+                        </div>
+                        <div class="form-floating">
+                            {% if form.password1.errors %}
+                                    {% for error in form.password1.errors %}
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <strong>{{ error }}</strong>
+                                        </div>
+                                    {% endfor %}
+                            {% endif %}
+                            <p>{{form.password1.label(class = "form-control-label")}}</p>
+                            <p>{{form.password1(class = "form-control")}}</p>
+                        </div>
+                        <p>{{form.submit(class = "btn btn-primary")}}</p>
+                        <small class="text-body-secondary">
+                            By clicking Sign up, you agree to the terms of use.
+                        </small>
+                        <hr class="my-4">
+                        <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                        <button type="submit" class="btn btn-outline-secondary rounded-3 w-100 py-2 mb-2">
+                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#twitter-x"/></svg>
+                            Sign up with X
+                        </button>
+                        <button type="submit" class="btn btn-outline-primary rounded-3 w-100 py-2 mb-2">
+                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#facebook"/></svg>
+                            Sign up with Facebook
+                        </button>
+                        <button type="submit" class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3">
+                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#github"/></svg>
+                            Sign up with Github
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
