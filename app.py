@@ -32,3 +32,9 @@ def download(upload_id):
 	upload = Upload.query.filter_by(id=upload_id).first()
 	return send_file(BytesIO(upload.data), 
 					download_name=upload.filename, as_attachment=True)
+
+# Run the app
+if __name__ == "__main__":
+	with app.app_context():
+		db.create_all()
+	app.run(debug = True, host = '0.0.0.0')
